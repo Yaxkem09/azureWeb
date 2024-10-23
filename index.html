@@ -3,9 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo</title>
+    <title>Formulario de Estudiante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .alert {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function guardarDatos() {
+            // Muestra una ventana emergente indicando que los datos se guardaron correctamente
+            alert("Los datos se han guardado correctamente");
+        }
+    </script>
 </head>
 <body>
-    <h1>Hola Mundo</h1>
+    <div class="container">
+        <h1>Formulario</h1>
+        <form onsubmit="guardarDatos(); return false;">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="carnet">Carnet:</label>
+            <input type="text" id="carnet" name="carnet" required>
+
+            <label for="curso">Curso:</label>
+            <input type="text" id="curso" name="curso" required>
+
+            <label for="nota">Nota:</label>
+            <input type="number" id="nota" name="nota" min="0" max="100" required>
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
 </body>
 </html>
